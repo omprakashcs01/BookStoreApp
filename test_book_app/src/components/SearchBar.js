@@ -2,7 +2,7 @@ import {StyleSheet, Text, TextInput, View} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-// const myIcon = ;
+
 const SearchBar = ({value ,onChangeText}) => {
   return (
     <View style={{marginHorizontal: 30, marginTop: 10, flex: 1}}>

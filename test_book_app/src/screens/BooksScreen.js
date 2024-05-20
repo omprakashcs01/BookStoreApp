@@ -21,28 +21,7 @@ const BooksScreen = () => {
   const navigation = useNavigation();
 
   console.log('books Use =>>', books);
-  //   const handleAPI = async () => {
-  //     const query = 'java';
-  //     const response = await searchBooksAPI(query);
-  //     response.map(book => {
-  //       console.log('BOOK title=>>>>:', book.volumeInfo.title);
-  //     });
-  //     setBooks(response);
 
-  //     // console.log(' handleAPI>>>', response);
-  //   };
-
-  //   useEffect(() => {
-  //     handleAPI();
-  //   }, [setSearch]);
-
-  //   const handleSearch = async () => {
-  //     if (searchTerm.trim() === '') {
-  //       setBooks([]); // Clear books if search term is empty
-  //       return;
-  //     }
-
-  //new
 
   const handleSearch = async () => {
     if (searchTerm.trim() === '') {
@@ -52,7 +31,7 @@ const BooksScreen = () => {
         setBooks(response);
       } catch (error) {
         console.error('Error searching books:', error);
-        setBooks([]); // Clear books on error
+        setBooks([]); 
       }
     } else {
       try {
@@ -60,29 +39,18 @@ const BooksScreen = () => {
         setBooks(response);
       } catch (error) {
         console.error('Error searching books:', error);
-        setBooks([]); // Clear books on error
+        setBooks([]); 
       }
     }
 
-    // try {
-    //   const response = await searchBooksAPI(searchTerm);
-    //   setBooks(response);
-    // } catch (error) {
-    //   console.error('Error searching books:', error);
-    //   setBooks([]); // Clear books on error
-    // }
+    
   };
 
   useEffect(() => {
     handleSearch();
   }, [searchTerm]);
 
-  // useEffect(() => {
-  //     // Check if searchTerm is empty and it's the first render
-  //     if (searchTerm.trim() === '' && books.length === 0) {
-  //       handleSearch('java'); // Perform default search
-  //     }
-  //   }, [searchTerm, books]);
+
 
   const renderBookItem = ({item}) => {
     const {volumeInfo} = item;
